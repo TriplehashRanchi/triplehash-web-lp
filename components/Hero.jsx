@@ -28,7 +28,7 @@ export default function Hero() {
       }}
     >
       {/* Top Left Tech Circuit SVG Decorative Element (Below Navbar) */}
-      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 left-1 right-auto lg:left-auto lg:right-[calc(50%+576px)] -top-4 sm:top-16 opacity-75 sm:opacity-100">
+      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 left-2 right-auto lg:left-auto lg:right-[calc(50%+576px)] top-4 sm:top-16 opacity-75 sm:opacity-100">
         <svg
           width="100%"
           height="100%"
@@ -334,7 +334,7 @@ export default function Hero() {
       </div>
 
       {/* Top Right Tech Circuit SVG Decorative Element (Below Navbar) */}
-      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 right-1 left-auto lg:right-auto lg:left-[calc(50%+576px)] -top-4 sm:top-16 opacity-75 sm:opacity-100 [transform:scaleX(-1)]">
+      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 right-2 left-auto lg:right-auto lg:left-[calc(50%+576px)] top-4 sm:top-16 opacity-75 sm:opacity-100 [transform:scaleX(-1)]">
         <svg
           width="100%"
           height="100%"
