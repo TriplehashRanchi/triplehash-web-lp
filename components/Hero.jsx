@@ -8,7 +8,7 @@ export default function Hero() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
   const videoSrc =
-    "https://video.gumlet.io/6ac4f3086d6d4d08c60d1496/6aca7ea744d03bebd941a0e1/main.mp4";
+    "https://video.gumlet.io/6ac4f3086d6d4d08c60d1496/6ace145b09415d7349c31793/main.mp4";
 
   const playVideo = () => {
     setIsPlaying(true);
@@ -692,7 +692,7 @@ export default function Hero() {
           className="mt-8 sm:mt-12 mb-10 sm:mb-14 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl px-2 sm:px-0"
         >
           <a
-            href="#book-call"
+            href="https://cal.hashboard.in/r/connect8394/business-systems"
             className="group/btn inline-flex items-center justify-center rounded-[2px] typo-blockquote cursor-pointer whitespace-nowrap transition-colors h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white bg-primary shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wider uppercase text-xs sm:text-sm"
           >
             <span className="relative z-10">BOOK YOUR 1:1 CALL NOW</span>
