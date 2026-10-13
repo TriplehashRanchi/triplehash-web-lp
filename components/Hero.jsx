@@ -728,7 +728,7 @@ export default function Hero() {
             <div className="relative aspect-video overflow-hidden flex flex-col items-center justify-center">
               <iframe
                 className="w-full h-full z-20"
-                src="https://youtu.be/JcOecO8n6mQ?autoplay=1"
+                src="https://video.gumlet.io/6ac4f3086d6d4d08c60d1496/6aca7ea744d03bebd941a0e1/main.mp4"
                 title="VSL Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
