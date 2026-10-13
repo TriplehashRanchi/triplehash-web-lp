@@ -1,0 +1,111 @@
+import Link from "next/link";
+import { ArrowLeft, CircleSlash2 } from "lucide-react";
+
+export const metadata = {
+  title: "Not The Right Fit Right Now | TripleHash",
+  description: "Your application has been reviewed.",
+};
+
+function CircuitAccent({ className = "" }) {
+  return (
+    <div className={`absolute pointer-events-none opacity-70 ${className}`}>
+      <svg
+        width="161"
+        height="245"
+        viewBox="0 0 161 245"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient
+            id="disqualified-circuit"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1"
+          >
+            <stop offset="0%" stopColor="#27B578" stopOpacity="0" />
+            <stop offset="50%" stopColor="#27B578" stopOpacity="1" />
+            <stop offset="100%" stopColor="#27B578" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M21 0V140.4L57 183V226.3M45 0V128.9L81 171.5V226.3M76 0V115.5L112.9 152.4V189.8M108 0V102.2L145 139.1V189.8"
+          stroke="white"
+          strokeOpacity="0.16"
+          strokeWidth="2"
+        />
+        <path
+          d="M21 0V140.4L57 183V226.3M45 0V128.9L81 171.5V226.3M76 0V115.5L112.9 152.4V189.8M108 0V102.2L145 139.1V189.8"
+          stroke="url(#disqualified-circuit)"
+          strokeWidth="2"
+          pathLength="1"
+          strokeDasharray="0.12 0.88"
+          style={{
+            strokeDashoffset: 1,
+            animation: "circuit-pulse 6s linear infinite",
+          }}
+        />
+        {[57, 81, 112.9, 145].map((cx, index) => (
+          <circle
+            key={cx}
+            cx={cx}
+            cy={index < 2 ? 226.3 : 189.8}
+            r="3"
+            fill="#27B578"
+            style={{ animation: "circuit-node-glow 5s ease-in-out infinite" }}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+export default function DisqualifiedPage() {
+  return (
+    <main
+      className="relative min-h-screen w-full overflow-hidden text-white"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, #004421 0%, #042717 100%)",
+      }}
+    >
+      
+      <div className="relative z-10 w-full border-b border-white/10 bg-[#042717]">
+        <div className="mx-auto flex h-12 w-[calc(100%-20px)] max-w-6xl items-center justify-center border-l border-r border-white/10 px-4 text-center text-sm font-semibold uppercase tracking-wider sm:h-16 sm:text-lg" />
+      </div>
+
+      <section className="relative z-10 mx-auto flex min-h-[calc(100vh-3rem)] w-[calc(100%-20px)] max-w-6xl flex-col items-center justify-center border-l border-r border-white/10 px-3 py-10 text-center sm:min-h-[calc(100vh-4rem)] sm:px-8 sm:py-14">
+        <div className="mb-5 inline-flex items-center gap-2 border border-[#26a36e]/35 bg-[#26a36e]/10 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#9ff0c7]">
+          <CircleSlash2 className="h-4 w-4" />
+          Application Reviewed
+        </div>
+
+        <h1 className="headline max-w-4xl text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-6xl">
+          Thank You For Sharing Your Details{" "}
+          <span className="bg-gradient-to-r from-emerald-200 via-emerald-400 to-teal-200 bg-clip-text text-transparent drop-shadow-sm">
+            We&apos;ve Received Your Response.
+          </span>
+        </h1>
+
+        <p className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-white/65 sm:text-2xl">
+          Thank you for taking the time to fill out the form. Our team has
+          received your details and will review the information you&apos;ve
+          shared. If there&apos;s a relevant next step, someone from our team
+          will get in touch with you directly.
+        </p>
+
+        <div className="mt-10 flex w-full max-w-xs flex-col items-center justify-center">
+          <Link
+            href="/"
+            className="inline-flex h-[48px] w-full items-center justify-center gap-2 rounded-[2px] border border-white/70 px-4 py-[12px] text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8"
+          >
+            <ArrowLeft className="h-4 w-4 shrink-0" />
+            Back To Site
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}
