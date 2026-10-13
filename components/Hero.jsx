@@ -1,11 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Play, Calendar, ArrowRight, Volume2 } from "lucide-react";
+import { Play } from "lucide-react";
 
 export default function Hero() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+  const videoSrc =
+    "https://video.gumlet.io/6ac4f3086d6d4d08c60d1496/6aca7ea744d03bebd941a0e1/main.mp4";
+
+  const playVideo = () => {
+    setIsPlaying(true);
+
+    const playPromise = videoRef.current?.play();
+    if (playPromise) {
+      playPromise.catch(() => setIsPlaying(false));
+    }
+  };
 
   return (
     <section
@@ -696,11 +708,11 @@ export default function Hero() {
 
           <button
             onClick={() => {
-              setIsPlaying(true);
               const videoElem = document.getElementById("vsl-video");
               if (videoElem) {
                 videoElem.scrollIntoView({ behavior: "smooth" });
               }
+              playVideo();
             }}
             className="group/btn inline-flex items-center justify-center gap-2 rounded-[2px] cursor-pointer whitespace-nowrap transition-all h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white border border-[#FFFFFFB3] hover:bg-[#FFFFFF0F] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wider text-xs sm:text-sm"
           >
@@ -726,13 +738,30 @@ export default function Hero() {
             <span className="absolute -bottom-[2px] -right-[2px] w-4 h-4 sm:w-6 sm:h-6 border-b-[2px] border-r-[2px] sm:border-b-[3px] sm:border-r-[3px] border-[#26a36e] pointer-events-none z-30" />
 
             <div className="relative aspect-video overflow-hidden flex flex-col items-center justify-center">
-              <iframe
-                className="w-full h-full z-20"
-                src="https://video.gumlet.io/6ac4f3086d6d4d08c60d1496/6aca7ea744d03bebd941a0e1/main.mp4"
+              <video
+                ref={videoRef}
+                className="w-full h-full z-20 bg-black object-cover"
+                src={videoSrc}
                 title="VSL Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                controls
+                playsInline
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
               />
+              {!isPlaying && (
+                <button
+                  type="button"
+                  onClick={playVideo}
+                  aria-label="Play VSL video"
+                  className="absolute inset-0 z-30 flex items-center justify-center bg-black/35 transition-colors hover:bg-black/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#26a36e] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E5D3F]"
+                >
+                  <span className="flex size-16 sm:size-20 items-center justify-center rounded-full border border-white/40 bg-white/95 text-[#0B3D25] shadow-[0_16px_40px_rgba(0,0,0,0.35)] transition-transform hover:scale-105">
+                    <Play className="ml-1 size-7 sm:size-9 fill-[#0B3D25]" />
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
