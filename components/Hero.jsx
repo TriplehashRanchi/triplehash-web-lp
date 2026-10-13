@@ -641,7 +641,7 @@ export default function Hero() {
 
       {/* 100% Full Screen Width Top Navbar Horizontal Divider Border */}
       <div className="w-full bg-[#042717] border-b border-white/10 h-12 sm:h-16 z-20">
-        <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 h-full px-4 sm:px-8 flex items-center justify-center"></div>
+        <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 h-full px-4 sm:px-8 flex items-center justify-center font-semibold text-xs sm:text-sm">SYSTEMISE. AUTOMATE. SCALE.</div>
       </div>
 
       {/* Main Hero Content Box with Left & Right Vertical Screen Borders */}
