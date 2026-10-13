@@ -654,7 +654,9 @@ export default function Hero() {
           </div>
 
           <div className="whitespace-nowrap">
-            <span className="text-[#26a36e]">5 - 500+ PEOPLE</span>{" "}
+            <span className="bg-gradient-to-r from-emerald-200 via-[#26a36e] to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_14px_rgba(38,163,110,0.35)]">
+              5 - 500+ PEOPLE
+            </span>{" "}
             <span className="text-white">ON YOUR TEAM?</span>
           </div>
         </div>
