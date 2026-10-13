@@ -28,7 +28,7 @@ export default function Hero() {
       }}
     >
       {/* Top Left Tech Circuit SVG Decorative Element (Below Navbar) */}
-      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 left-2 right-auto lg:left-auto lg:right-[calc(50%+576px)] top-0 sm:top-16 opacity-75 sm:opacity-100">
+      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 left-2 right-auto lg:left-auto lg:right-[calc(50%+576px)] -top-4 sm:top-16 opacity-75 sm:opacity-100">
         <svg
           width="100%"
           height="100%"
@@ -334,7 +334,7 @@ export default function Hero() {
       </div>
 
       {/* Top Right Tech Circuit SVG Decorative Element (Below Navbar) */}
-      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 right-2 left-auto lg:right-auto lg:left-[calc(50%+576px)] top-0 sm:top-16 opacity-75 sm:opacity-100 [transform:scaleX(-1)]">
+      <div className="absolute w-[100px] sm:w-[161px] h-[152px] sm:h-[245px] pointer-events-none block z-20 right-2 left-auto lg:right-auto lg:left-[calc(50%+576px)] -top-4 sm:top-16 opacity-75 sm:opacity-100 [transform:scaleX(-1)]">
         <svg
           width="100%"
           height="100%"
@@ -641,7 +641,7 @@ export default function Hero() {
 
       {/* 100% Full Screen Width Top Navbar Horizontal Divider Border */}
       <div className="w-full bg-[#042717] border-b border-white/10 h-12 sm:h-16 z-20">
-        <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 h-full px-4 sm:px-8 flex items-center justify-center font-semibold text-xs sm:text-sm">SYSTEMISE. AUTOMATE. SCALE.</div>
+        <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 h-full px-4 sm:px-8 flex items-center justify-center font-semibold text-sm sm:text-lg">From Founder-Driven To System-Driven</div>
       </div>
 
       {/* Main Hero Content Box with Left & Right Vertical Screen Borders */}
