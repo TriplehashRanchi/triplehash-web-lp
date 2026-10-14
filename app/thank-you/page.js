@@ -66,7 +66,7 @@ export default function ThankYouPage() {
           "radial-gradient(ellipse at center, #004421 0%, #042717 100%)",
       }}
     >
-      <MetaPixel scriptId="meta-pixel-thank-you" />
+      <MetaPixel eventName="Purchase" scriptId="meta-pixel-thank-you" />
    
       <div className="relative z-10 w-full border-b border-white/10 bg-[#042717]">
         <div className="mx-auto flex h-12 w-[calc(100%-20px)] max-w-6xl items-center justify-center border-l border-r border-white/10 px-4 text-center text-sm font-semibold uppercase tracking-wider sm:h-16 sm:text-lg">
