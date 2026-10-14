@@ -7,7 +7,7 @@ import ProcessSection from "@/components/ProcessSection";
 import BeforeAfter from "@/components/BeforeAfter";
 import FaqSection from "@/components/FaqSection";
 import StickyMobileFooter from "@/components/StickyMobileFooter";
-import MetaPixel from "@/components/MetaPixel";
+//import MetaPixel from "@/components/MetaPixel";
 
 export default function Home() {
   return (
