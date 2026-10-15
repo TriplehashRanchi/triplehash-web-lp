@@ -2,7 +2,9 @@ import Script from "next/script";
 
 const pixelId = "1086217957223175";
 
-export default function MetaPixel({ scriptId }) {
+export default function MetaPixel({ eventName = "PageView", scriptId }) {
+  const shouldSendServerEvent = eventName === "Purchase";
+
   return (
     <>
       <Script
@@ -19,12 +21,14 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '${pixelId}');
-var eventId = '${scriptId}-' + Date.now() + '-' + Math.random().toString(36).slice(2);
-fbq('track', 'Purchase', {}, {eventID: eventId});
-(function() {
+var eventId = ${shouldSendServerEvent ? `'${scriptId}-' + Date.now() + '-' + Math.random().toString(36).slice(2)` : "undefined"};
+fbq('track', '${eventName}', {}, eventId ? {eventID: eventId} : undefined);
+${
+  shouldSendServerEvent
+    ? `(function() {
   var params = new URLSearchParams(window.location.search);
   var payload = JSON.stringify({
-    eventName: 'Purchase',
+    eventName: '${eventName}',
     eventId: eventId,
     eventSourceUrl: window.location.href,
     fbclid: params.get('fbclid') || ''
@@ -43,12 +47,15 @@ fbq('track', 'Purchase', {}, {eventID: eventId});
     keepalive: true
   }).catch(function() {});
 })();
+`
+    : ""
+}
           `,
         }}
       />
       <noscript
         dangerouslySetInnerHTML={{
-          __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1" />`,
+          __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${pixelId}&ev=${eventName}&noscript=1" />`,
         }}
       />
     </>
