@@ -96,15 +96,7 @@ export default function DisqualifiedPage() {
           will get in touch with you directly.
         </p>
 
-        <div className="mt-10 flex w-full max-w-xs flex-col items-center justify-center">
-          <Link
-            href="/"
-            className="inline-flex h-[48px] w-full items-center justify-center gap-2 rounded-[2px] border border-white/70 px-4 py-[12px] text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/10 sm:w-auto sm:px-8"
-          >
-            <ArrowLeft className="h-4 w-4 shrink-0" />
-            Back To Site
-          </Link>
-        </div>
+        
       </section>
     </main>
   );
