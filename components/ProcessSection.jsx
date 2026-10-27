@@ -1,36 +1,28 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { MessageSquareText, Brain, Zap, User } from "lucide-react";
 
 const processSteps = [
   {
     number: "1",
-    title: "Business Audit",
-    description:
-      "We understand how your sales, team, operations, reporting and follow-ups currently work.",
-    image: "/process1.png",
+    title: "Extract.",
+    description: "We sit with you and map every repeated question, approval and decision your team brings to you. We pull your rules out of your head, your WhatsApp history, your Excel sheets and your Tally data.",
   },
   {
     number: "2",
-    title: "Opportunity Mapping",
-    description:
-      "We identify where time is being wasted, where things get missed, and what should be systemised, automated or rebuilt.",
-    image: "/process2.png",
+    title: "Encode.",
+    description: <>We build a custom AI trained on <em>your</em> rules, <em>your</em> data and the way <em>you</em> decide. Not generic AI. Yours.</>,
   },
   {
     number: "3",
-    title: "System Plan",
-    description:
-      "We create a clear roadmap of what to fix first, what can wait, and what will create the biggest operational impact.",
-    image: "/process3.png",
+    title: "Embed.",
+    description: "We plug it into WhatsApp, Tally, Google Sheets, your CRM, or whatever your team already uses. No new app. No training headache.",
   },
   {
     number: "4",
-    title: "Build & Integrate",
-    description:
-      "Our engineering team builds the required automations, workflows, integrations, dashboards or custom tools.",
-    image: "/process4.png",
+    title: "Escalate.",
+    description: "Routine questions get answered instantly, your way. Only genuinely new decisions reach you, with a short summary and a suggested answer. You just say yes or no.",
   },
 ];
 
@@ -48,8 +40,8 @@ export default function ProcessSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="headline text-2xl sm:text-4xl font-semibold text-slate-900 leading-tight"
           >
-            We Start With Your Business. <br className="hidden sm:inline" />
-            <span className="text-[#0a6c42]">Then Build Around It.</span>
+            Introducing the <br className="hidden sm:inline" />
+            <span className="text-[#0a6c42]">Founder Brain System</span>
           </motion.h2>
 
           <motion.p
@@ -59,9 +51,8 @@ export default function ProcessSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 sm:mt-5 text-md sm:text-lg text-[#70707b] font-medium max-w-2xl leading-tight"
           >
-            Every business has different bottlenecks, workflows and levels of
-            complexity. That’s why we don’t start with a fixed tool stack or a
-            pre-made automation package.
+            Instead of giving your team another tool to learn, we take what’s in
+            your head and put it where your team already works.
           </motion.p>
         </div>
 
@@ -74,12 +65,12 @@ export default function ProcessSection() {
           className="w-full max-w-3xl text-center mb-8 sm:mb-10 flex flex-col items-center  "
         >
           <h3 className="text-xl sm:text-3xl font-semibold text-slate-900 leading-tight">
-            Here’s How The 1-to-1 Process Works
+            It has four parts.
           </h3>
         </motion.div>
 
         {/* 4 Cards Wall - All 4 Cards in One Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full mb-10 sm:mb-16 border-l border-t border-slate-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full mb-8 sm:mb-10 border-l border-t border-slate-200">
           {processSteps.map((step, idx) => (
             <motion.div
               key={idx}
@@ -87,7 +78,7 @@ export default function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="relative p-5 pb-0 border-r border-b border-slate-200 flex flex-col justify-between transition-colors group"
+              className="relative p-5 sm:p-6 border-r border-b border-slate-200 flex flex-col justify-between transition-colors group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -101,49 +92,105 @@ export default function ProcessSection() {
                   {step.title}
                 </h4>
 
-                <p className="text-md sm:text-base text-slate-600   font-medium">
+                <p className="text-base text-slate-600 font-medium leading-relaxed">
                   {step.description}
                 </p>
               </div>
 
-              {/* Visual Card Image Box */}
-              <div className="w-full h-44 sm:h-55 p-3 flex items-center justify-center relative overflow-hidden group rounded-none mt-auto">
-                <img
-                  src={step.image || "/process-audit.jpg"}
-                  alt={step.title}
-                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
+
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center w-full sm:w-auto px-2 sm:px-0"
-        >
-          <a
-            href="https://cal.hashboard.in/r/connect8394/business-systems"
-            className="group/btn inline-flex items-center justify-center rounded-[2px] typo-blockquote cursor-pointer whitespace-nowrap transition-colors h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white bg-primary shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wider uppercase text-xs sm:text-sm"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <span>BOOK YOUR 1:1 CALL NOW</span>
-              <ArrowRight className="w-4 h-4 shrink-0" />
-            </span>
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(74.61%_74.61%_at_50.39%_0%,rgba(255,255,255,0.32)_0%,rgba(191,191,191,0.24)_25%,rgba(128,128,128,0.16)_50%,rgba(0,0,0,0)_100%)] transition-opacity" />
-            <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(74.61%_74.61%_at_50.39%_0%,rgba(0,0,0,0)_0%,rgba(128,128,128,0.1)_50%,rgba(255,255,255,0.2)_100%)] opacity-0 group-active/btn:opacity-100 transition-opacity" />
-            <div className="absolute inset-0 pointer-events-none bg-[rgba(0,0,0,0.06)] opacity-0 group-hover/btn:opacity-100 group-active/btn:opacity-0 transition-opacity" />
-            <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_1px_1px_0.25px_0px_rgba(255,255,255,0.12),inset_-1px_1px_0.25px_0px_rgba(255,255,255,0.12)]" />
-            <div className="absolute pointer-events-none bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.4)] rounded-full size-[4px] left-[3px] top-[3px]" />
-            <div className="absolute pointer-events-none bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.4)] rounded-full size-[4px] right-[3px] top-[3px]" />
-            <div className="absolute pointer-events-none bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.4)] rounded-full size-[4px] left-[3px] bottom-[3px]" />
-            <div className="absolute pointer-events-none bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.4)] rounded-full size-[4px] right-[3px] bottom-[3px]" />
-          </a>
-        </motion.div>
+        <div className="w-full border border-slate-200 bg-[#f4f3ec] p-5 sm:p-8">
+          <p className="text-center text-xl sm:text-2xl font-bold text-slate-900 leading-snug mb-8 sm:mb-12">
+            Your team stops asking you. <span className="text-[#0a6c42]">They ask your Founder Brain.</span>
+          </p>
+
+          <div className="flex flex-col items-stretch gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-0">
+            {/* LEFT: Team question card */}
+            <div className="lg:w-[260px] lg:shrink-0">
+              <div className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_4px_18px_rgba(35,65,30,0.05)]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#eaf2df] text-[#0a6c42]">
+                  <MessageSquareText aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <p className="text-base font-bold text-slate-900">Team question</p>
+                  <p className="mt-1 text-sm text-slate-500 leading-relaxed">
+                    Any question, approval or decision from your team.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CONNECTOR: left -> brain */}
+            <div className="flex items-center justify-center lg:w-16 lg:shrink-0">
+              {/* mobile: straight down arrow */}
+              <svg aria-hidden="true" viewBox="0 0 24 44" className="h-10 w-7 text-[#0a6c42] lg:hidden" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 4 V34" />
+                <path d="M5 28 L12 36 L19 28" />
+              </svg>
+              {/* desktop: straight right arrow */}
+              <svg aria-hidden="true" viewBox="0 0 64 24" className="hidden w-full text-[#0a6c42] lg:block" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 12 H54" />
+                <path d="M46 5 L56 12 L46 19" />
+              </svg>
+            </div>
+
+            {/* CENTER: Founder Brain box with ring halo */}
+            <div className="relative flex items-center justify-center lg:w-[280px] lg:shrink-0">
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <span className="absolute h-[190px] w-[190px] rounded-full border border-[#0a6c42]/8 sm:h-[240px] sm:w-[240px]" />
+                <span className="absolute h-[145px] w-[145px] rounded-full border border-[#0a6c42]/12 sm:h-[185px] sm:w-[185px]" />
+                <span className="absolute h-[105px] w-[105px] rounded-full border border-[#0a6c42]/16 sm:h-[135px] sm:w-[135px]" />
+              </div>
+              <div className="relative z-10 flex w-full items-center justify-center gap-3 rounded-2xl border border-[#0a6c42] bg-[#042717] px-6 py-5">
+                <Brain aria-hidden="true" className="h-7 w-7 text-emerald-200" strokeWidth={1.6} />
+                <span className="text-lg sm:text-xl font-extrabold text-white">Founder Brain</span>
+              </div>
+            </div>
+
+            {/* CONNECTOR: brain -> right cards (branching) */}
+            <div className="flex items-center justify-center lg:w-16 lg:shrink-0">
+              {/* mobile: straight down arrow */}
+              <svg aria-hidden="true" viewBox="0 0 24 44" className="h-10 w-7 text-[#0a6c42] lg:hidden" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 4 V34" />
+                <path d="M5 28 L12 36 L19 28" />
+              </svg>
+              {/* desktop: two curved branching arrows */}
+              <svg aria-hidden="true" viewBox="0 0 64 120" className="hidden h-28 w-full text-[#0a6c42] lg:block" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                {/* upper branch */}
+                <path d="M4 60 C22 60 34 40 52 26" />
+                <path d="M44 26 L55 24 L52 35" />
+                {/* lower branch */}
+                <path d="M4 60 C22 60 34 80 52 94" />
+                <path d="M52 85 L55 96 L44 94" />
+              </svg>
+            </div>
+
+            {/* RIGHT: two outcome cards */}
+            <div className="flex flex-col gap-4 lg:w-[320px] lg:shrink-0">
+              <div className="flex items-start gap-4 rounded-2xl border border-[#0a6c42]/30 bg-[#eef6ee] p-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#dcebdc] text-[#0a6c42]">
+                  <Zap aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <p className="text-base font-bold text-slate-900">Most answered instantly</p>
+                  <p className="mt-1 text-sm text-slate-500 leading-relaxed">Your rules. Your way.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+                  <User aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <p className="text-base font-bold text-slate-900">Only new decisions reach you</p>
+                  <p className="mt-1 text-sm text-slate-500 leading-relaxed">With a summary and a suggested answer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

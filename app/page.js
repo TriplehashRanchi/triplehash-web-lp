@@ -5,6 +5,9 @@ import Solutions from "@/components/Solutions";
 import FourLayers from "@/components/FourLayers";
 import ProcessSection from "@/components/ProcessSection";
 import BeforeAfter from "@/components/BeforeAfter";
+import LifeAfter from "@/components/LifeAfter";
+import FounderCapacity from "@/components/FounderCapacity";
+import ApplicationSteps from "@/components/ApplicationSteps";
 import FaqSection from "@/components/FaqSection";
 import StickyMobileFooter from "@/components/StickyMobileFooter";
 import MetaPixel from "@/components/MetaPixel";
@@ -20,6 +23,9 @@ export default function Home() {
       <FourLayers />
       <ProcessSection />
       <BeforeAfter />
+      <LifeAfter />
+      <FounderCapacity />
+      <ApplicationSteps />
       <FaqSection />
       <StickyMobileFooter />
     </main>

@@ -1,52 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  GitFork,
-  Activity,
-  AlertTriangle,
-  Layers,
-  UserX,
-  SmartphoneNfc,
-} from "lucide-react";
+import { Tag, BadgePercent, Handshake, MessageCircle } from "lucide-react";
 
 const painPointsData = [
-  {
-    icon: GitFork,
-    title: "Every Important Decision Comes Back To You",
-    description:
-      "Your team can execute, but they still need you to approve, clarify or decide what happens next.",
-  },
-  {
-    icon: Activity,
-    title: "You’re Constantly Chasing Updates",
-    description:
-      "Tasks are moving, but you don’t have one clear view of what’s done, delayed or blocked.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Leads Depend On Manual Follow-Up",
-    description:
-      "Someone forgets to call, reply or follow up and revenue quietly slips through the cracks.",
-  },
-  {
-    icon: Layers,
-    title: "Information Is Scattered Everywhere",
-    description:
-      "WhatsApp, spreadsheets, CRMs, emails and team conversations all hold different pieces of the business.",
-  },
-  {
-    icon: UserX,
-    title: "Your Team Knows The Process Until Someone Leaves",
-    description:
-      "Important knowledge lives inside people instead of inside reliable systems.",
-  },
-  {
-    icon: SmartphoneNfc,
-    title: "You Can Step Away Physically. But Not Mentally.",
-    description:
-      "Even when you’re not at work, you’re still checking messages, solving problems and making decisions.",
-  },
+  { icon: Tag, title: "How to price this order." },
+  { icon: BadgePercent, title: "Whether to give that discount." },
+  { icon: Handshake, title: "Which vendor to trust." },
+  { icon: MessageCircle, title: "What to say to an angry customer." },
 ];
 
 // Generate dense pixel grid matrix matching reference image (14 rows x 220 columns = 3,080 squares)
@@ -80,7 +41,7 @@ for (let r = 0; r < gridRows; r++) {
   }
 }
 
-function SquareGridBanner() {
+export function SquareGridBanner() {
   return (
     <div className="w-full bg-[#f4f3ec] border-t border-b border-neutral-300">
       <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-neutral-300 h-[50px] sm:h-[80px] relative overflow-hidden flex items-center justify-center">
@@ -120,8 +81,8 @@ export default function PainPoints() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="headline text-2xl sm:text-4xl font-semibold text-slate-900 leading-tight"
             >
-              More Revenue Shouldn’t Mean <br className="hidden sm:inline" />
-              <span className="text-[#0a6c42]">More Things Waiting On You.</span>
+              Your business doesn’t have a people problem. <br className="hidden sm:inline" />
+              <span className="text-[#0a6c42]">It has a “one brain” problem.</span>
             </motion.h2>
 
             <motion.p
@@ -131,37 +92,80 @@ export default function PainPoints() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-4 sm:mt-5 text-md sm:text-lg text-[#70707b] font-medium max-w-2xl leading-tight"
             >
-              As the business grows, the owner often becomes the invisible system
-              holding everything together.
+              You have a team. Some of them are genuinely good. And still,
+              everything ends up on your phone. Why?
             </motion.p>
+            <p className="mt-5 sm:mt-6 text-base sm:text-lg text-slate-600 font-medium max-w-2xl leading-relaxed">
+              Because the answers your business needs every day live in exactly
+              one place: <strong className="text-[#0a6c42] font-extrabold">YOUR HEAD</strong>.
+            </p>
           </div>
 
-          {/* 6 Pain Point Cards Grid - Seamless Gap-0 Grid Wall */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 w-full mb-10 sm:mb-16 border-l border-t border-neutral-300">
+          <div className="one-brain-diagram">
+            <svg className="one-brain-connections" viewBox="0 0 1000 180" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="decision-arrow" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="9" refY="6" orient="auto">
+                  <path d="M3 2 9 6 3 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </marker>
+              </defs>
+              <g fill="none" stroke="currentColor" strokeWidth="1.7" strokeDasharray="3 5" strokeLinecap="round" markerEnd="url(#decision-arrow)">
+                <path d="M414 72 C394 72 391 40 365 40" />
+                <path d="M586 72 C606 72 609 40 635 40" />
+                <path d="M414 108 C394 108 391 140 365 140" />
+                <path d="M586 108 C606 108 609 140 635 140" />
+              </g>
+            </svg>
+            <svg className="one-brain-mobile-connections" viewBox="0 0 360 140" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="mobile-decision-arrow" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" viewBox="0 0 10 10" refX="8" refY="5" orient="auto">
+                  <path d="M2 1.5 8 5 2 8.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </marker>
+              </defs>
+              <g fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 5" strokeLinecap="round" markerEnd="url(#mobile-decision-arrow)">
+                <path d="M150 51C119 51 90 33 90 3" />
+                <path d="M210 51C241 51 270 33 270 3" />
+                <path d="M150 89C119 89 90 107 90 137" />
+                <path d="M210 89C241 89 270 107 270 137" />
+              </g>
+            </svg>
+            <div className="one-brain-center" aria-hidden="true">
+              <div className="one-brain-halo" />
+              <svg className="one-brain-head" viewBox="0 0 260 310" fill="none">
+                <defs>
+                  <linearGradient id="head-fade" x1="130" y1="30" x2="130" y2="310" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#b3ceb6" />
+                    <stop offset=".6" stopColor="#c5d8c2" />
+                    <stop offset="1" stopColor="#c7d8c4" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                <path d="M86 310C87 292 87 272 83 255L64 255C47 255 40 247 41 233L42 224C42 221 38 220 37 217C36 214 40 211 40 208L40 203L25 200C18 199 16 195 20 189L40 158C43 153 42 148 41 141C37 112 43 85 59 64C77 40 105 27 136 27C190 27 230 63 232 113C234 148 219 175 202 200C192 215 188 229 190 248C192 271 199 292 208 310Z" fill="url(#head-fade)" />
+                <g transform="translate(52 39) scale(.84)" fill="#eef5e8" fillOpacity=".45" stroke="#216f4b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M37 116C19 113 12 102 14 88C11 74 19 63 30 58C31 44 43 34 56 33C64 20 80 18 92 24C104 17 117 22 124 29C141 28 154 37 159 49C174 53 180 66 178 77C190 87 189 104 180 114C180 131 167 141 153 140C143 153 125 154 111 146C95 153 77 147 70 136C54 137 41 130 37 116Z" />
+                  <path fill="none" d="M37 116C43 99 57 92 75 91L113 88C128 87 132 74 140 68" />
+                  <path fill="none" d="M70 136C74 122 89 119 104 120L139 115C151 112 155 103 154 96" />
+                  <path fill="none" d="M91 26C83 35 83 49 83 63V86M108 31C101 43 105 59 104 83" />
+                  <path fill="none" d="M108 48C124 37 141 48 134 60L119 73" />
+                  <path fill="none" d="M57 44L56 64M43 68C31 70 29 82 35 91M62 77C69 74 73 67 70 57" />
+                  <path fill="none" d="M159 61L153 76M169 87C178 98 171 109 162 112" />
+                  <path fill="none" d="M111 146C115 155 116 164 111 171L91 143M142 133C130 138 122 136 116 133" />
+                </g>
+              </svg>
+            </div>
             {painPointsData.map((item, idx) => {
               const IconComponent = item.icon;
               return (
                 <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 25 }}
+                  key={item.title}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="relative p-5 sm:p-6 rounded-none border-r border-b border-neutral-300 flex flex-col justify-between"
+                  transition={{ duration: 0.4, delay: idx * 0.07 }}
+                  className={`one-brain-card one-brain-card-${idx}`}
                 >
-                  <div>
-                    <div className="w-10 h-10 rounded-none border border-dashed border-neutral-300 flex items-center justify-center mb-4 text-[#0a6c42]">
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-
-                    <h3 className="text-lg sm:text-2xl font-bold text-slate-900 mb-3 leading-snug">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-md sm:text-base text-slate-600   font-medium">
-                      {item.description}
-                    </p>
+                  <div className="one-brain-card-icon">
+                    <IconComponent aria-hidden="true" strokeWidth={1.9} />
                   </div>
+                  <h3>{item.title}</h3>
                 </motion.div>
               );
             })}
@@ -173,19 +177,18 @@ export default function PainPoints() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="w-full max-w-4xl rounded-none p-6 sm:p-10 border border-neutral-300 text-center relative overflow-hidden"
+            className="w-full max-w-[850px] rounded-none px-4 py-5 sm:px-8 sm:py-6 border border-[#e0e2da] bg-[#f4f3ec] text-center relative overflow-hidden"
           >
             <div className="relative z-10 flex flex-col items-center">
-              <h4 className="text-sm sm:text-base font-bold text-[#0a6c42] uppercase tracking-wider sm:tracking-widest mb-3">
-                The Goal Isn’t To Remove You From The Business.
-              </h4>
-              <p className="text-xl sm:text-3xl font-extrabold text-slate-900 leading-tight max-w-3xl">
-                It’s To Stop The Business From <br className="hidden sm:inline" />
-                <span className="text-[#0a6c42]">
-                  Needing You For Everything.
-                </span>
+              <p className="text-lg sm:text-2xl font-semibold text-slate-900 leading-snug max-w-2xl">
+                Until those answers live somewhere else, every new hire is just
+                one more person who needs to <span className="text-[#0a6c42]">call you.</span>
               </p>
-              <div className="mt-6 sm:mt-8 w-full sm:w-auto">
+              <p className="mt-3 text-sm sm:text-base text-slate-600 font-medium leading-relaxed max-w-2xl">
+                <span className="text-[#0a6c42] font-bold">Keep reading.</span>{" "}
+                We’ll show you how to get them out.
+              </p>
+              <div className="mt-5 w-full sm:w-auto">
                 <a
                   href="https://cal.hashboard.in/r/connect8394/business-systems"
                   className="group/btn inline-flex items-center justify-center rounded-[2px] typo-blockquote cursor-pointer whitespace-nowrap transition-colors h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white bg-primary shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wider uppercase text-xs sm:text-sm"

@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Play } from "lucide-react";
+import { Plane, Play } from "lucide-react";
 
 export default function Hero() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -641,63 +641,49 @@ export default function Hero() {
 
       {/* 100% Full Screen Width Top Navbar Horizontal Divider Border */}
       <div className="w-full bg-[#042717] border-b border-white/10 h-12 sm:h-16 z-20">
-        <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 h-full px-4 sm:px-8 flex items-center justify-center font-semibold text-sm sm:text-lg">From Founder-Driven To System-Driven</div>
+        <div className="w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 h-full flex items-center overflow-hidden font-semibold text-sm sm:text-lg text-white">
+          <div className="flex w-max shrink-0 animate-[marquee-left_28s_linear_infinite] hover:[animation-play-state:paused]">
+            {[...Array(4)].map((_, idx) => (
+              <span key={idx} className="flex items-center gap-8 sm:gap-12 pr-8 sm:pr-12 whitespace-nowrap">
+                FOR INDIAN FOUNDERS DOING ₹1CR+ WITH A TEAM OF 5 OR MORE &nbsp;  &nbsp;  &nbsp; WE ONBOARD ONLY 2 NEW FOUNDERS A MONTH
+                <span className="text-[#27B578]">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Main Hero Content Box with Left & Right Vertical Screen Borders */}
       <div className="relative z-10 w-[calc(100%-20px)] sm:w-full max-w-6xl mx-auto border-l border-r border-white/10 flex-1 px-3 sm:px-8 pt-6 sm:pt-10 pb-10 sm:pb-14 flex flex-col items-center text-center">
-        {/* Targeted Audience Text in Navbar */}
-        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:gap-2 mb-2 sm:mb-2 text-xl sm:text-2xl md:text-3xl font-bold   uppercase text-center">
-          <div className="whitespace-nowrap">
-            <span className="text-[#26a36e]">₹1 CRORE+</span>{" "}
-            <span className="text-white">REVENUE?</span>
+        <div className="mb-5 sm:mb-6 flex w-full max-w-xl items-center justify-center" aria-label="Our Challenge">
+          <span className="hidden sm:block h-px flex-1 bg-gradient-to-r from-transparent to-emerald-500/60" aria-hidden="true" />
+          <div className="relative flex shrink-0 items-center rounded-full border border-emerald-400/25 bg-gradient-to-r from-emerald-950 via-emerald-800/80 to-emerald-600/70 pr-4 sm:pr-5 shadow-[0_0_24px_rgba(16,185,129,0.12)]">
+            <span className="-my-1 -ml-1 mr-2 sm:mr-3 flex size-10 sm:size-12 items-center justify-center rounded-full border border-emerald-400/60 bg-[#03482d] shadow-[4px_0_16px_rgba(16,185,129,0.35)]">
+              <Plane className="size-5 sm:size-6 -rotate-12 text-white" aria-hidden="true" strokeWidth={2} />
+            </span>
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.06em] text-emerald-100">Our Challenge</span>
           </div>
-
-          <div className="whitespace-nowrap">
-            <span className="bg-gradient-to-r from-emerald-200 via-[#26a36e] to-teal-200 bg-clip-text text-transparent drop-shadow-[0_0_14px_rgba(38,163,110,0.35)]">
-              5 - 500+ PEOPLE
-            </span>{" "}
-            <span className="text-white">ON YOUR TEAM?</span>
-          </div>
+          <span className="hidden sm:block h-px flex-1 bg-gradient-to-l from-transparent to-emerald-500/60" aria-hidden="true" />
         </div>
-        {/* Main Headline */}
-        <h1
-         
-          className="headline text-3xl sm:text-[2.6rem] font-medium text-white tracking-tight leading-[1.2] sm:leading-[1.1] max-w-4xl"
-        >
-          But Still Involved<span className="hidden sm:inline">&nbsp;</span>
-          <span className="sm:hidden"> </span>
-          <span className="bg-gradient-to-r from-emerald-200 via-emerald-400 to-teal-200 bg-clip-text text-transparent drop-shadow-sm">
-            In Every Decision?
-          </span>
+        <h1 className="headline max-w-4xl text-[30px] sm:text-[42px] lg:text-[48px] font-medium tracking-tight leading-[1.15] text-white text-balance">
+          Take a Vacation. Leave the Laptop.{" "}
+          <span className="text-emerald-300">Your Business Keeps Running As Before.</span>
         </h1>
-
-        {/* Subtitle */}
-        <p
-        
-          className="mt-6 sm:mt-10 text-md sm:text-xl md:text-2xl text-[#FFFFFF80] max-w-3xl font-medium "
-        >
-          Build the systems that{" "}
-          <strong className="text-white font-semibold">
-            give you back your time
-          </strong>{" "}
-          with AI, automation and a{" "}
-          <strong className="text-[#26a36e] font-semibold  ">
-            real engineering team
-          </strong>{" "}
-          behind your business.
+        <p className="mt-5 sm:mt-6 max-w-3xl text-base sm:text-xl leading-relaxed text-white/70 text-pretty">
+          In <strong className="font-semibold text-white">30 days</strong>, we build a custom{" "}
+          <strong className="font-semibold text-white">Well Trained AI system</strong>, on how you think and decide, so your team gets your answers without calling you.
         </p>
 
         {/* Call To Action Buttons (Above Video) */}
         <div
-          
-          className="mt-8 sm:mt-12 mb-10 sm:mb-14 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-2xl px-2 sm:px-0"
+
+          className="mt-6 sm:mt-8 mb-8 sm:mb-10 flex flex-col items-center justify-center gap-3 w-full max-w-2xl px-2 sm:px-0"
         >
           <a
             href="https://cal.hashboard.in/r/connect8394/business-systems"
-            className="group/btn inline-flex items-center justify-center rounded-[2px] typo-blockquote cursor-pointer whitespace-nowrap transition-colors h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white bg-primary shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wider uppercase text-xs sm:text-sm"
+            className="group/btn inline-flex items-center justify-center rounded-[2px] typo-blockquote cursor-pointer whitespace-nowrap transition-colors h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white bg-primary shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wide text-sm sm:text-base"
           >
-            <span className="relative z-10">BOOK YOUR 1:1 CALL NOW</span>
+            <span className="relative z-10">Show Me How IS It Possible</span>
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(74.61%_74.61%_at_50.39%_0%,rgba(255,255,255,0.32)_0%,rgba(191,191,191,0.24)_25%,rgba(128,128,128,0.16)_50%,rgba(0,0,0,0)_100%)] transition-opacity" />
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(74.61%_74.61%_at_50.39%_0%,rgba(0,0,0,0)_0%,rgba(128,128,128,0.1)_50%,rgba(255,255,255,0.2)_100%)] opacity-0 group-active/btn:opacity-100 transition-opacity" />
             <div className="absolute inset-0 pointer-events-none bg-[rgba(0,0,0,0.06)] opacity-0 group-hover/btn:opacity-100 group-active/btn:opacity-0 transition-opacity" />
@@ -708,25 +694,17 @@ export default function Hero() {
             <div className="absolute pointer-events-none bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.4)] rounded-full size-[4px] right-[3px] bottom-[3px]" />
           </a>
 
-          <button
-            onClick={() => {
-              const videoElem = document.getElementById("vsl-video");
-              if (videoElem) {
-                videoElem.scrollIntoView({ behavior: "smooth" });
-              }
-              playVideo();
-            }}
-            className="group/btn inline-flex items-center justify-center gap-2 rounded-[2px] cursor-pointer whitespace-nowrap transition-all h-[48px] w-full sm:w-auto px-4 sm:px-8 py-[12px] text-white border border-[#FFFFFFB3] hover:bg-[#FFFFFF0F] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.64)] relative overflow-hidden font-bold tracking-wider text-xs sm:text-sm"
-          >
-            <Play className="w-4 h-4 text-white fill-white shrink-0" />
-            <span className="relative z-10">Watch 2 min vsl video</span>
-          </button>
+          <p className="max-w-md text-xs sm:text-sm leading-relaxed text-white/60 text-center">
+            Free 30-minute call with the founder of TripleHash{" "}
+            <span className="hidden sm:inline">· </span>
+            <span className="block sm:inline">2-minute application</span>
+          </p>
         </div>
 
         {/* VSL Video Section (Below Button) */}
         <div
           id="vsl-video"
-          
+
           className="w-full max-w-4xl group"
         >
           <div className="relative p-2 sm:p-3 bg-[#1E5D3F]">

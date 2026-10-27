@@ -6,29 +6,49 @@ import { Plus, Minus, ArrowRight } from "lucide-react";
 
 const faqData = [
   {
-    question: "Is this only about AI?",
+    question: "Is this just ChatGPT with a nice wrapper?",
     answer:
-      "No. AI is one part of the solution. Depending on your business, the right answer may involve automation, integrations, custom software, better workflows or a mix of them.",
+      "No. ChatGPT knows the internet. Your Founder Brain knows your business: your rules, your data and your past decisions, connected to the tools you use. It’s built from scratch for you, which is exactly why nobody else can sell it to you for ₹2,000 a month.",
   },
   {
-    question: "Do I need to understand technology?",
+    question: "Will my team actually use it?",
     answer:
-      "No. We focus on your business problems and handle the technical side.",
+      "Yes, because there’s nothing new to learn. It works inside WhatsApp, where your team already spends the whole day.",
   },
   {
-    question: "Do you only advise, or do you also build?",
+    question: "Is my data safe?",
     answer:
-      "We can do both. If something needs to be built, our engineering team can design and implement it.",
+      "Your data stays on systems you own and control, with role-based access.",
   },
   {
-    question: "Will everything be automated?",
+    question: "What if the AI gives a wrong answer?",
     answer:
-      "No. We only automate where it genuinely makes sense. Important human decisions and relationships should stay human.",
+      " In week 3, you review its answers before your team relies on them. Anything it isn’t sure about comes to you. You set the limits, and you can change them anytime.",
   },
   {
-    question: "Is this suitable for every business?",
+    question: "How much of my time will this take?",
     answer:
-      "It’s best suited for established businesses with a growing team, repeated processes and enough operational complexity that manual work is starting to become a bottleneck.",
+      " A few hours in week 1, about 2-3 hours in weeks 2 and 3, and very little after that. That’s the point.",
+  },
+  {
+    question: "What does it cost?",
+    answer:
+      " Every build is custom, so we share an exact quote on the call once we understand your business. If it doesn’t make financial sense for you, we’ll tell you.",
+  },
+  {
+    question: "My business is different. Will this work for me?",
+    answer:
+      "That’s exactly why it’s custom. We don’t fit your business into our software. We build the software around your business.",
+  },
+  {
+    question: "What tools can it connect with?",
+    answer:
+      " Whatever you use: WhatsApp, Tally, Zoho, Google Sheets, Excel, CRMs, ERPs and more. If your team uses it, we can connect it.",
+  },
+  {
+    question: "What happens after 30 days?",
+    answer:
+      "After 30 days you get a fully engineered and robust AI system that takes care of your business while you sit back and relax.",
   },
 ];
 
